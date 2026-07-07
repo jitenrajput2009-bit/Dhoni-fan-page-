@@ -331,7 +331,17 @@ position:fixed;
 left:20px;
 bottom:20px;
 padding:12px 20px;
-border:none;
+border:none;.social a{
+    color: gold;
+    font-size: 40px;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.social a:hover{
+    color: white;
+    transform: scale(1.2);
+}
 border-radius:30px;
 background:gold;
 color:black;
