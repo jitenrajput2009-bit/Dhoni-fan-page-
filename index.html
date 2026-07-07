@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MS Dhoni Fan Page V4</title>
+<title>MS Dhoni | Ultimate Fan Page</title>
+
+<meta name="description" content="Ultimate MS Dhoni Fan Website">
 
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
 
-<button id="musicBtn">🎵 Play Music</button>
 <body>
 
-<!-- Loading Screen -->
+<!-- Loading -->
 
 <div id="loader">
 
-<h1>🏏 THALA 💛</h1>
+<div class="loader-text">
+
+<h1>🏏 THALA</h1>
+
+<p>Ultimate Fan Experience</p>
 
 </div>
 
+</div>
+
+<!-- Progress Bar -->
+
+<div id="progressBar"></div>
+
 <!-- Header -->
 
-<header class="header">
+<header>
 
 <div class="logo">
 
@@ -49,19 +55,35 @@
 
 <a href="#gallery">Gallery</a>
 
-<a href="#stats">Stats</a>
+<a href="#records">Records</a>
 
-<a href="#trophies">Trophies</a>
+<a href="#timeline">Timeline</a>
 
 <a href="#contact">Contact</a>
 
 </nav>
 
+<div class="header-buttons">
+
+<button id="themeBtn">
+
+🌙
+
+</button>
+
+<button id="musicBtn">
+
+🎵
+
+</button>
+
+</div>
+
 </header>
 
 <!-- Hero -->
 
-<section id="home" class="hero">
+<section class="hero" id="home">
 
 <video autoplay muted loop playsinline>
 
@@ -75,19 +97,29 @@
 
 <img src="dhoni1.jpg" class="hero-img">
 
-<h1>THALA FOR A REASON 💛</h1>
+<h1 id="typing">
+
+THALA FOR A REASON
+
+</h1>
 
 <p>
 
-Captain Cool • World Cup Winner • CSK Legend
+Captain Cool • Finisher • Leader • Legend
 
 </p>
 
 <a href="#gallery" class="btn">
 
-Explore Gallery
+Explore
 
 </a>
+
+</div>
+
+<div class="scroll-down">
+
+<i class="fa-solid fa-angle-down"></i>
 
 </div>
 
@@ -95,7 +127,7 @@ Explore Gallery
 
 <!-- About -->
 
-<section id="about" class="about glass">
+<section id="about">
 
 <h2>About MS Dhoni</h2>
 
@@ -103,154 +135,255 @@ Explore Gallery
 
 Mahendra Singh Dhoni is one of the greatest captains in cricket history.
 
-He won the ICC T20 World Cup (2007), ODI World Cup (2011),
-
-Champions Trophy (2013) and multiple IPL titles with Chennai Super Kings.
+He led India to victory in the ICC T20 World Cup (2007), ICC Cricket World Cup (2011), and ICC Champions Trophy (2013), while also winning multiple IPL titles with Chennai Super Kings.
 
 </p>
 
-</section>
+</section> <!-- Gallery -->
 
-<!-- Gallery -->
+<section id="gallery">
 
-<section id="gallery" class="gallery glass">
+<h2>📸 Premium Gallery</h2>
 
-<h2>Gallery</h2>
+<div class="gallery-grid">
 
-<div class="slider">
+<div class="gallery-item">
+<img src="dhoni1.jpg" alt="Dhoni 1">
+</div>
 
-<img src="dhoni1.jpg">
+<div class="gallery-item">
+<img src="dhoni2.jpg" alt="Dhoni 2">
+</div>
 
-<img src="dhoni2.jpg">
+<div class="gallery-item">
+<img src="dhoni3.jpg" alt="Dhoni 3">
+</div>
 
-<img src="dhoni3.jpg">
-
-<img src="dhoni4.jpg">
+<div class="gallery-item">
+<img src="dhoni4.jpg" alt="Dhoni 4">
+</div>
 
 </div>
 
 </section>
 
-<!-- Stats -->
+<!-- Records -->
 
-<section id="stats" class="stats glass">
+<section id="records">
 
-<h2>Career Stats</h2>
+<h2>🏆 Career Records</h2>
 
-<div class="cards">
+<div class="record-box">
 
 <div class="card">
-
-<h3 id="match">0</h3>
-
-<p>Matches</p>
-
+<h3 id="matches">538</h3>
+<p>International Matches</p>
 </div>
 
 <div class="card">
-
-<h3 id="runs">0</h3>
-
-<p>Runs</p>
-
+<h3 id="runs">17092+</h3>
+<p>International Runs</p>
 </div>
 
 <div class="card">
+<h3>829</h3>
+<p>International Dismissals</p>
+</div>
 
-<h3 id="cups">0</h3>
-
+<div class="card">
+<h3>3</h3>
 <p>ICC Trophies</p>
-
 </div>
 
 <div class="card">
-
-<h3 id="ipl">0</h3>
-
+<h3>5</h3>
 <p>IPL Titles</p>
+</div>
 
+<div class="card">
+<h3>1</h3>
+<p>T20 World Cup</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- Trophy -->
+<!-- Trophy Room -->
 
-<section id="trophies" class="trophies glass">
+<section id="trophies">
 
-<h2>Major Achievements</h2>
+<h2>🏅 Trophy Room</h2>
+
+<div class="trophy-grid">
+
+<div class="trophy">
+🏆
+<h3>T20 World Cup</h3>
+<p>2007</p>
+</div>
+
+<div class="trophy">
+🏆
+<h3>ODI World Cup</h3>
+<p>2011</p>
+</div>
+
+<div class="trophy">
+🏆
+<h3>Champions Trophy</h3>
+<p>2013</p>
+</div>
+
+<div class="trophy">
+💛
+<h3>IPL Champion</h3>
+<p>5 Times</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Timeline -->
+
+<section id="timeline">
+
+<h2>📅 Career Timeline</h2>
 
 <div class="timeline">
 
-<div>🏆 T20 World Cup 2007</div>
+<div class="time-card">
+<h3>2004</h3>
+<p>International Debut</p>
+</div>
 
-<div>🏆 ODI World Cup 2011</div>
+<div class="time-card">
+<h3>2007</h3>
+<p>Won T20 World Cup</p>
+</div>
 
-<div>🏆 Champions Trophy 2013</div>
+<div class="time-card">
+<h3>2011</h3>
+<p>Won ODI World Cup</p>
+</div>
 
-<div>💛 IPL Champion ×5</div>
+<div class="time-card">
+<h3>2013</h3>
+<p>Won Champions Trophy</p>
+</div>
+
+<div class="time-card">
+<h3>2023</h3>
+<p>Won 5th IPL Trophy</p>
+</div>
 
 </div>
 
 </section>
 
-<!-- Quote -->
+<!-- Famous Quote -->
 
 <section class="quote">
 
 <h2>
 
-"Process is more important than results."
+"Process is more important than Results."
 
 </h2>
 
+</section><!-- Fan Wall -->
+
+<section id="fanwall">
+
+<h2>💛 Fan Wall</h2>
+
+<div class="fan-card">
+
+<h3>THALA FOREVER 🏏</h3>
+
+<p>
+"The Greatest Captain and Finisher in Cricket History."
+</p>
+
+</div>
+
 </section>
+
+<!-- Music -->
+
+<audio id="bgMusic" loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
 
 <!-- Contact -->
 
-<section id="contact" class="contact glass">
+<section id="contact">
 
-<h2>Connect</h2>
+<h2>📞 Connect With Me</h2>
+
+<p>Follow me on Social Media</p>
 
 <div class="social">
 
+<a href="https://www.instagram.com/jitenparmar_8/" target="_blank">
+
 <i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="https://www.youtube.com/@cricshortindiateam-j1k" target="_blank">
 
 <i class="fab fa-youtube"></i>
 
+</a>
+
+<a href="https://github.com/jitenrajput2009-bit" target="_blank">
+
 <i class="fab fa-github"></i>
 
-<i class="fab fa-facebook"></i>
+</a>
 
 </div>
 
 </section>
 
+<!-- Footer -->
+
 <footer>
 
-<h2>💛 THALA FOREVER 💛</h2>
+<h2>💛 THALA FOR A REASON 💛</h2>
 
-<p>Made by Jiten Rajput</p>
-<div class="social">
+<p>Made with ❤️ by Jiten Rajput</p>
 
-<a href="https://www.instagram.com/jitenparmar_8/" target="_blank" title="Instagram">
-    <i class="fab fa-instagram"></i>
-</a>
+<p>© 2026 All Rights Reserved</p>
 
-<a href="https://www.youtube.com/@cricshortindiateam-j1k" target="_blank" title="YouTube">
-    <i class="fab fa-youtube"></i>
-</a>
+</footer>
 
-<a href="https://github.com/jitenrajput2009-bit" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-</a>
+<!-- Lightbox -->
+
+<div id="lightbox">
+
+<span id="closeLightbox">&times;</span>
+
+<img id="lightboxImg" src="" alt="Preview">
 
 </div>
-</footer>
+
+<!-- Scroll To Top -->
+
+<button id="topBtn">
+
+⬆
+
+</button>
+
+<!-- JavaScript -->
 
 <script src="script.js"></script>
 
 </body>
 
-</html>
+  </html>
