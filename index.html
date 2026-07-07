@@ -1,122 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MS Dhoni Fan Page V3</title>
+
+<title>MS Dhoni Fan Page V4</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
 
+<!-- Loading Screen -->
+
+<div id="loader">
+
+<h1>🏏 THALA 💛</h1>
+
+</div>
+
+<!-- Header -->
+
 <header class="header">
 
 <div class="logo">
-🏏 <span>MS DHONI</span>
+
+🏏 MS DHONI
+
 </div>
 
 <nav>
+
 <a href="#home">Home</a>
+
 <a href="#about">About</a>
+
 <a href="#gallery">Gallery</a>
+
 <a href="#stats">Stats</a>
+
 <a href="#trophies">Trophies</a>
+
+<a href="#contact">Contact</a>
+
 </nav>
 
 </header>
 
+<!-- Hero -->
+
 <section id="home" class="hero">
 
-<img src="dhoni1.jpg" class="hero-img" alt="MS Dhoni">
+<video autoplay muted loop playsinline>
+
+<source src="dhoni.mp4" type="video/mp4">
+
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<img src="dhoni1.jpg" class="hero-img">
 
 <h1>THALA FOR A REASON 💛</h1>
 
 <p>
+
 Captain Cool • World Cup Winner • CSK Legend
+
 </p>
 
-<a href="#gallery" class="btn">Explore Gallery</a>
+<a href="#gallery" class="btn">
+
+Explore Gallery
+
+</a>
+
+</div>
 
 </section>
 
-<section id="about" class="about">
+<!-- About -->
+
+<section id="about" class="about glass">
 
 <h2>About MS Dhoni</h2>
 
 <p>
+
 Mahendra Singh Dhoni is one of the greatest captains in cricket history.
-He led India to victory in the 2007 T20 World Cup,
-the 2011 Cricket World Cup,
-and the 2013 Champions Trophy.
-He also led Chennai Super Kings to multiple IPL titles.
+
+He won the ICC T20 World Cup (2007), ODI World Cup (2011),
+
+Champions Trophy (2013) and multiple IPL titles with Chennai Super Kings.
+
 </p>
 
 </section>
 
-<section id="gallery" class="gallery">
+<!-- Gallery -->
+
+<section id="gallery" class="gallery glass">
 
 <h2>Gallery</h2>
 
-<div class="gallery-grid">
+<div class="slider">
 
-<img src="dhoni1.jpg" alt="Dhoni">
+<img src="dhoni1.jpg">
 
-<img src="dhoni2.jpg" alt="Dhoni">
+<img src="dhoni2.jpg">
 
-<img src="dhoni3.jpg" alt="Dhoni">
+<img src="dhoni3.jpg">
 
-<img src="dhoni4.jpg" alt="Dhoni">
+<img src="dhoni4.jpg">
 
 </div>
 
 </section>
 
-<section id="stats" class="stats">
+<!-- Stats -->
+
+<section id="stats" class="stats glass">
 
 <h2>Career Stats</h2>
 
-<div class="stats-box">
+<div class="cards">
 
-<div class="stat">
-<h3>538+</h3>
+<div class="card">
+
+<h3 id="match">0</h3>
+
 <p>Matches</p>
+
 </div>
 
-<div class="stat">
-<h3>17000+</h3>
+<div class="card">
+
+<h3 id="runs">0</h3>
+
 <p>Runs</p>
+
 </div>
 
-<div class="stat">
-<h3>829</h3>
-<p>Dismissals</p>
-</div>
+<div class="card">
 
-<div class="stat">
-<h3>3</h3>
+<h3 id="cups">0</h3>
+
 <p>ICC Trophies</p>
+
+</div>
+
+<div class="card">
+
+<h3 id="ipl">0</h3>
+
+<p>IPL Titles</p>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="trophies" class="trophies">
+<!-- Trophy -->
 
-<h2>Major Trophies</h2>
+<section id="trophies" class="trophies glass">
 
-<div class="trophy-grid">
+<h2>Major Achievements</h2>
 
-<div class="card">🏆 T20 World Cup 2007</div>
+<div class="timeline">
 
-<div class="card">🏆 ODI World Cup 2011</div>
+<div>🏆 T20 World Cup 2007</div>
 
-<div class="card">🏆 Champions Trophy 2013</div>
+<div>🏆 ODI World Cup 2011</div>
 
-<div class="card">💛 IPL Champion ×5</div>
+<div>🏆 Champions Trophy 2013</div>
+
+<div>💛 IPL Champion ×5</div>
+
+</div>
+
+</section>
+
+<!-- Quote -->
+
+<section class="quote">
+
+<h2>
+
+"Process is more important than results."
+
+</h2>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact" class="contact glass">
+
+<h2>Connect</h2>
+
+<div class="social">
+
+<i class="fab fa-instagram"></i>
+
+<i class="fab fa-youtube"></i>
+
+<i class="fab fa-github"></i>
+
+<i class="fab fa-facebook"></i>
 
 </div>
 
@@ -126,11 +227,12 @@ He also led Chennai Super Kings to multiple IPL titles.
 
 <h2>💛 THALA FOREVER 💛</h2>
 
-<p>Made with ❤️ by Jiten Rajput</p>
+<p>Made by Jiten Rajput</p>
 
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
