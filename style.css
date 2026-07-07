@@ -305,7 +305,109 @@ border-radius:20px;
 box-shadow:0 0 15px rgba(255,215,0,.5);
 }
 
-.gallery-grid img:hover{
+.gallery-grid img:hover{*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#000,#0b1d35,#001d3d);
+color:#fff;
+}
+
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(12px);
+border-bottom:2px solid gold;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:gold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:gold;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px 40px;
+}
+
+.hero-img{
+width:280px;
+height:280px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid gold;
+box-shadow:0 0 40px gold;
+transition:.5s;
+}
+
+.hero-img:hover{
+transform:scale(1.08);
+}
+
+.hero h1{
+font-size:50px;
+margin-top:25px;
+color:gold;
+}
+
+.hero p{
+margin-top:15px;
+font-size:22px;
+color:#ddd;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:gold;
+color:black;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px gold;
+}
+
+.about,
+.gallery,
+.stats,
+.trophies
 transform:scale(1.08);
 box-shadow:0 0 30px gold;
 }
