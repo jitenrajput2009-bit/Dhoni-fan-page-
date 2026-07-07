@@ -1,351 +1,456 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#050816;
-color:#fff;
-overflow-x:hidden;
-}
-
-/* Loader */
-
-#loader{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-transition:.8s;
-}
-
-#loader h1{
-font-size:60px;
-color:gold;
-animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-50%{transform:scale(1.15);}
-}
-
-/* Header */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(12px);
-border-bottom:2px solid gold;
-z-index:1000;
-}
-
-.logo{
-font-size:30px;
-font-weight:700;
-color:gold;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:600;
-transition:.3s;
-}
-
-nav a:hover{
-color:gold;
-}
-
-#themeBtn{
-background:gold;
-border:none;
-padding:10px 14px;
-border-radius:50%;
-cursor:pointer;
-font-size:18px;
-}
-
-/* Hero */
-
-.hero{
-position:relative;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-text-align:center;
-}
-
-.hero video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.55);
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-}
-
-.hero-img{
-width:260px;
-height:260px;
-border-radius:50%;
-object-fit:cover;
-border:6px solid gold;
-box-shadow:0 0 35px gold;
-animation:float 3s infinite ease-in-out;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-}
-
-.hero h1{
-margin-top:25px;
-font-size:55px;
-color:gold;
-}
-
-.hero p{
-margin:20px;
-font-size:22px;
-}
-
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:gold;
-color:#000;
-font-weight:bold;
-text-decoration:none;
-border-radius:40px;
-transition:.3s;
-}
-
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 0 25px gold;
-}
-
-/* Sections */
-
-section{
-padding:80px 8%;
-}
-
-section h2{
-text-align:center;
-font-size:42px;
-margin-bottom:35px;
-color:gold;
-}
+/* ===========================
+   STYLE PART 2
+   Gallery • Records • Trophy
+=========================== */
 
 /* Gallery */
 
-.slider{
-display:flex;
-gap:20px;
-overflow-x:auto;
-scroll-behavior:smooth;
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:30px;
 }
 
-.slider::-webkit-scrollbar{
-display:none;
+.gallery-item{
+    overflow:hidden;
+    border-radius:20px;
+    border:3px solid gold;
+    background:#111827;
+    transition:.4s;
+    cursor:pointer;
 }
 
-.slider img{
-width:300px;
-height:380px;
-object-fit:cover;
-border-radius:20px;
-border:3px solid gold;
-transition:.4s;
+.gallery-item img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    transition:.5s;
 }
 
-.slider img:hover{
-transform:scale(1.06);
-box-shadow:0 0 30px gold;
+.gallery-item:hover{
+    box-shadow:0 0 35px gold;
+    transform:translateY(-10px);
 }
 
-/* Cards */
+.gallery-item:hover img{
+    transform:scale(1.12);
+}
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+/* Records */
+
+.record-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:30px;
 }
 
 .card{
-padding:25px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
-border:2px solid gold;
-border-radius:20px;
-text-align:center;
-transition:.4s;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:2px solid gold;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.4s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px gold;
+    transform:translateY(-12px);
+    box-shadow:0 0 30px gold;
 }
 
 .card h3{
-font-size:42px;
-color:gold;
+    font-size:45px;
+    color:gold;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#fff;
+    font-size:18px;
+}
+
+/* Trophy Room */
+
+.trophy-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.trophy{
+    background:linear-gradient(145deg,#0b1b32,#132c4f);
+    border:2px solid gold;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.4s;
+    font-size:45px;
+}
+
+.trophy h3{
+    margin-top:15px;
+    color:gold;
+    font-size:24px;
+}
+
+.trophy p{
+    color:#ddd;
+    margin-top:10px;
+}
+
+.trophy:hover{
+    transform:rotateY(8deg) scale(1.05);
+    box-shadow:0 0 35px gold;
 }
 
 /* Timeline */
 
 .timeline{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:30px;
 }
 
-.timeline div{
-padding:20px;
-background:#0f2038;
-border:2px solid gold;
-border-radius:15px;
-text-align:center;
-transition:.3s;
+.time-card{
+    background:#13233a;
+    border-left:5px solid gold;
+    padding:25px;
+    border-radius:15px;
+    transition:.4s;
 }
 
-.timeline div:hover{
-transform:scale(1.05);
+.time-card h3{
+    color:gold;
+    font-size:28px;
+}
+
+.time-card p{
+    text-align:left;
+    margin-top:10px;
+}
+
+.time-card:hover{
+    transform:translateX(8px);
+    box-shadow:0 0 25px gold;
 }
 
 /* Quote */
 
 .quote{
-text-align:center;
-font-size:30px;
-font-style:italic;
-color:gold;
+    text-align:center;
+    padding:100px 20px;
 }
 
-/* Social */
+.quote h2{
+    color:gold;
+    font-size:36px;
+    font-style:italic;
+    text-shadow:0 0 20px rgba(255,215,0,.5);
+}
+
+/* Fan Wall */
+
+#fanwall{
+    text-align:center;
+}
+
+.fan-card{
+    max-width:800px;
+    margin:auto;
+    padding:35px;
+    border:2px solid gold;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+}
+
+.fan-card h3{
+    color:gold;
+    margin-bottom:15px;
+    font-size:30px;
+}/* ===========================
+   STYLE PART 2
+   Gallery • Records • Trophy
+=========================== */
+
+/* Gallery */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    border-radius:20px;
+    border:3px solid gold;
+    background:#111827;
+    transition:.4s;
+    cursor:pointer;
+}
+
+.gallery-item img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover{
+    box-shadow:0 0 35px gold;
+    transform:translateY(-10px);
+}
+
+.gallery-item:hover img{
+    transform:scale(1.12);
+}
+
+/* Records */
+
+.record-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:2px solid gold;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 0 30px gold;
+}
+
+.card h3{
+    font-size:45px;
+    color:gold;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#fff;
+    font-size:18px;
+}
+
+/* Trophy Room */
+
+.trophy-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.trophy{
+    background:linear-gradient(145deg,#0b1b32,#132c4f);
+    border:2px solid gold;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.4s;
+    font-size:45px;
+}
+
+.trophy h3{
+    margin-top:15px;
+    color:gold;
+    font-size:24px;
+}
+
+.trophy p{
+    color:#ddd;
+    margin-top:10px;
+}
+
+.trophy:hover{
+    transform:rotateY(8deg) scale(1.05);
+    box-shadow:0 0 35px gold;
+}
+
+/* Timeline */
+
+.timeline{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.time-card{
+    background:#13233a;
+    border-left:5px solid gold;
+    padding:25px;
+    border-radius:15px;
+    transition:.4s;
+}
+
+.time-card h3{
+    color:gold;
+    font-size:28px;
+}
+
+.time-card p{
+    text-align:left;
+    margin-top:10px;
+}
+
+.time-card:hover{
+    transform:translateX(8px);
+    box-shadow:0 0 25px gold;
+}
+
+/* Quote */
+
+.quote{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.quote h2{
+    color:gold;
+    font-size:36px;
+    font-style:italic;
+    text-shadow:0 0 20px rgba(255,215,0,.5);
+}
+
+/* Fan Wall */
+
+#fanwall{
+    text-align:center;
+}
+
+.fan-card{
+    max-width:800px;
+    margin:auto;
+    padding:35px;
+    border:2px solid gold;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+}
+
+.fan-card h3{
+    color:gold;
+    margin-bottom:15px;
+    font-size:30px;
+    }/* ===========================
+   STYLE PART 3
+   Contact • Footer • Lightbox
+   Responsive • Dark Mode
+=========================== */
+
+/* Contact */
+
+#contact{
+    text-align:center;
+    padding:90px 8%;
+}
 
 .social{
-display:flex;
-justify-content:center;
-gap:30px;
-font-size:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    margin-top:30px;
+    flex-wrap:wrap;
 }
 
-.social i{
-color:gold;
-transition:.3s;
-cursor:pointer;
+.social a{
+    width:70px;
+    height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(255,255,255,.08);
+    border:2px solid gold;
+    border-radius:50%;
+    color:gold;
+    text-decoration:none;
+    font-size:32px;
+    transition:.35s;
 }
 
-.social i:hover{
-transform:scale(1.2);
+.social a:hover{
+    background:gold;
+    color:#000;
+    transform:translateY(-8px) scale(1.1);
+    box-shadow:0 0 30px gold;
 }
 
 /* Footer */
 
 footer{
-background:#000;
-padding:30px;
-text-align:center;
-border-top:2px solid gold;
+    background:#050505;
+    border-top:2px solid gold;
+    text-align:center;
+    padding:35px 20px;
 }
 
 footer h2{
-color:gold;
+    color:gold;
+    margin-bottom:10px;
 }
 
-/* Mobile */
-
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-padding:15px;
+footer p{
+    color:#ccc;
+    margin-top:8px;
 }
 
-nav{
-margin-top:15px;
+/* Lightbox */
+
+#lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
 }
 
-nav a{
-display:inline-block;
-margin:8px;
+#lightbox img{
+    max-width:90%;
+    max-height:85vh;
+    border:4px solid gold;
+    border-radius:15px;
 }
 
-.hero h1{
-font-size:34px;
+#closeLightbox{
+    position:absolute;
+    top:25px;
+    right:35px;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
 }
 
-.hero p{
-font-size:18px;
-}
+/* Back To Top */
 
-.hero-img{
-width:180px;
-height:180px;
-}
-
-.slider img{
-width:240px;
-height:300px;
-}
-
-section h2{
-font-size:30px;
-}
-
-}
-#musicBtn{
-position:fixed;
-left:20px;
-bottom:20px;
-padding:12px 20px;
-border:none;.social a{
-    color: gold;
-    font-size: 40px;
-    margin: 0 15px;
-    transition: 0.3s;
-}
-
-.social a:hover{
-    color: white;
-    transform: scale(1.2);
-}
-border-radius:30px;
-background:gold;
-color:black;
-font-weight:bold;
-cursor:pointer;
-z-index:9999;
-}
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:gold;
+    color:#000;
+    font
