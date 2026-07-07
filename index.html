@@ -6,57 +6,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MS DHONI | Ultimate Fan Website</title>
+<title>MS Dhoni | Ultimate Fan Website</title>
 
-<meta name="description" content="The Ultimate MS Dhoni Fan Website">
+<meta name="description" content="Ultimate MS Dhoni Fan Website">
 
-<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<!-- Font Awesome -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<!-- AOS -->
-<link rel="stylesheet"
-href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-
-<!-- Swiper -->
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 </head>
 
 <body>
 
-<!-- ================= LOADER ================= -->
+<!-- Loader -->
 
 <div id="loader">
 
-<div class="loader-content">
-
 <h1>🏏 THALA</h1>
 
-<p>Loading Ultimate Experience...</p>
+<div class="loader-bar">
 
-<div class="loading-bar">
-
-<div class="loading-fill"></div>
+<div class="loader-fill"></div>
 
 </div>
 
 </div>
 
-</div>
-
-<!-- Progress Bar -->
-
-<div id="progressBar"></div>
-
-<!-- ================= HEADER ================= -->
+<!-- Header -->
 
 <header>
 
@@ -74,15 +57,13 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <a href="#gallery">Gallery</a>
 
-<a href="#records">Records</a>
-
-<a href="#timeline">Timeline</a>
+<a href="#stats">Stats</a>
 
 <a href="#contact">Contact</a>
 
 </nav>
 
-<div class="header-icons">
+<div class="header-btns">
 
 <button id="themeBtn">
 
@@ -100,7 +81,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- Hero -->
 
 <section id="home" class="hero">
 
@@ -112,16 +93,11 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <div class="overlay"></div>
 
-<div class="hero-content" data-aos="zoom-in">
+<div class="hero-content">
 
-<img src="assets/images/dhoni1.jpg"
-class="hero-img">
+<img src="assets/images/dhoni1.jpg" alt="MS Dhoni" class="hero-img">
 
-<h1 id="typing">
-
-THALA FOR A REASON
-
-</h1>
+<h1>THALA FOR A REASON</h1>
 
 <p>
 
@@ -137,9 +113,9 @@ Explore Gallery
 
 </a>
 
-<a href="#records" class="btn2">
+<a href="#stats" class="btn2">
 
-Career Records
+Career Stats
 
 </a>
 
@@ -147,17 +123,7 @@ Career Records
 
 </div>
 
-<div class="scroll-down">
-
-<i class="fa-solid fa-angles-down"></i>
-
-</div>
-
 </section>
-
-<!-- Floating Particles -->
-
-<div id="particles"></div>
 
 <!-- Hero Stats -->
 
@@ -165,23 +131,23 @@ Career Records
 
 <div class="stat">
 
-<h2 id="matches">0</h2>
+<h2 id="matches">538</h2>
 
-<p>Matches</p>
-
-</div>
-
-<div class="stat">
-
-<h2 id="runs">0</h2>
-
-<p>Runs</p>
+<p>International Matches</p>
 
 </div>
 
 <div class="stat">
 
-<h2 id="trophies">0</h2>
+<h2 id="runs">17092+</h2>
+
+<p>International Runs</p>
+
+</div>
+
+<div class="stat">
+
+<h2>3</h2>
 
 <p>ICC Trophies</p>
 
@@ -189,23 +155,28 @@ Career Records
 
 <div class="stat">
 
-<h2 id="ipl">0</h2>
+<h2>5</h2>
 
 <p>IPL Titles</p>
 
 </div>
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="about" data-aos="fade-up">
+<section id="about" class="about">
+
+<div class="container">
 
 <h2>About MS Dhoni</h2>
 
 <p>
+
 Mahendra Singh Dhoni is one of the greatest captains in cricket history.
-Known as "Captain Cool", he led India to victories in the 2007 ICC T20 World Cup,
+Known as "Captain Cool", he led India to victory in the 2007 ICC T20 World Cup,
 2011 ICC Cricket World Cup and 2013 ICC Champions Trophy.
-His calm leadership and finishing ability made him a cricket legend.
+
 </p>
+
+</div>
 
 </section>
 
@@ -213,189 +184,50 @@ His calm leadership and finishing ability made him a cricket legend.
 
 <section id="gallery" class="gallery">
 
-<h2 data-aos="fade-up">Premium Gallery</h2>
+<h2>Gallery</h2>
 
-<div class="swiper mySwiper">
+<div class="gallery-grid">
 
-<div class="swiper-wrapper">
+<img src="assets/images/dhoni1.jpg" alt="Dhoni 1">
 
-<div class="swiper-slide">
-<img src="assets/images/dhoni1.jpg" alt="Dhoni">
-</div>
+<img src="assets/images/dhoni2.jpg" alt="Dhoni 2">
 
-<div class="swiper-slide">
-<img src="assets/images/dhoni2.jpg" alt="Dhoni">
-</div>
+<img src="assets/images/dhoni3.jpg" alt="Dhoni 3">
 
-<div class="swiper-slide">
-<img src="assets/images/dhoni3.jpg" alt="Dhoni">
-</div>
-
-<div class="swiper-slide">
-<img src="assets/images/dhoni4.jpg" alt="Dhoni">
-</div>
-
-</div>
-
-<div class="swiper-pagination"></div>
+<img src="assets/images/dhoni4.jpg" alt="Dhoni 4">
 
 </div>
 
 </section>
 
-<!-- ================= RECORDS ================= -->
+<!-- ================= CAREER STATS ================= -->
 
-<section id="records" class="records">
+<section id="stats" class="stats">
 
-<h2 data-aos="fade-up">Career Records</h2>
+<h2>Career Stats</h2>
 
-<div class="record-grid">
+<div class="stats-grid">
 
-<div class="record-card" data-aos="zoom-in">
-<h3>17092+</h3>
-<p>International Runs</p>
-</div>
+<div class="card">
 
-<div class="record-card" data-aos="zoom-in">
-<h3>829</h3>
-<p>International Dismissals</p>
-</div>
-
-<div class="record-card" data-aos="zoom-in">
 <h3>538</h3>
-<p>International Matches</p>
-</div>
 
-<div class="record-card" data-aos="zoom-in">
-<h3>5</h3>
-<p>IPL Titles</p>
-</div>
+<p
+  </section>
 
-<div class="record-card" data-aos="zoom-in">
-<h3>3</h3>
-<p>ICC Trophies</p>
-</div>
+<!-- About section starts in Part 2 --><!-- ================= FAN ZONE ================= -->
 
-<div class="record-card" data-aos="zoom-in">
-<h3>200+</h3>
-<p>Successful Stumpings</p>
-</div>
+<section id="fans" class="fans">
 
-</div>
+<h2>Fan Zone ❤️</h2>
 
-</section>
+<div class="fan-box">
 
-<!-- ================= TROPHY ROOM ================= -->
+<h3>Do You Like This Website?</h3>
 
-<section id="trophies" class="trophies">
+<button id="likeBtn">❤️ Like</button>
 
-<h2 data-aos="fade-up">Trophy Room</h2>
-
-<div class="trophy-grid">
-
-<div class="trophy-card">
-🏆
-<h3>ICC T20 World Cup</h3>
-<p>2007 Champion</p>
-</div>
-
-<div class="trophy-card">
-🏆
-<h3>ICC Cricket World Cup</h3>
-<p>2011 Champion</p>
-</div>
-
-<div class="trophy-card">
-🏆
-<h3>Champions Trophy</h3>
-<p>2013 Champion</p>
-</div>
-
-<div class="trophy-card">
-💛
-<h3>IPL Champion</h3>
-<p>5 Times with CSK</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= CAREER TIMELINE ================= -->
-
-<section id="timeline" class="timeline">
-
-<h2 data-aos="fade-up">Career Timeline</h2>
-
-<div class="timeline-container">
-
-<div class="timeline-item">
-<h3>2004</h3>
-<p>International Debut</p>
-</div>
-
-<div class="
-</section>
-
-<!-- ABOUT starts in Part 2 --><!-- ================= FAN WALL ================= -->
-
-<section id="fanwall" class="fanwall">
-
-<h2 data-aos="fade-up">💛 Fan Wall</h2>
-
-<div class="fan-card" data-aos="zoom-in">
-
-<h3>"THALA FOR A REASON"</h3>
-
-<p>
-"The Greatest Captain. The Greatest Finisher.
-Forever in our Hearts."
-</p>
-
-<button id="likeBtn">
-❤️ Like
-</button>
-
-<p id="likeCount">0 Fans Liked</p>
-
-</div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-<h2 data-aos="fade-up">Connect With Me</h2>
-
-<div class="social-links">
-
-<a href="https://www.instagram.com/jitenparmar_8/"
-target="_blank">
-
-<i class="fab fa-instagram"></i>
-
-Instagram
-
-</a>
-
-<a href="https://www.youtube.com/@cricshortindiateam-j1k"
-target="_blank">
-
-<i class="fab fa-youtube"></i>
-
-YouTube
-
-</a>
-
-<a href="https://github.com/jitenrajput2009-bit"
-target="_blank">
-
-<i class="fab fa-github"></i>
-
-GitHub
-
-</a>
+<p id="likeCount">0 Likes</p>
 
 </div>
 
@@ -409,63 +241,15 @@ GitHub
 
 </audio>
 
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<h2>🏏 MS DHONI</h2>
-
-<p>
-
-Made with ❤️ by Jiten Rajput
-
-</p>
-
-<p>
-
-© 2026 Ultimate Fan Website
-
-</p>
-
-</footer>
-
-<!-- ================= TOP BUTTON ================= -->
-
-<button id="topBtn"><!-- ================= FAN WALL ================= -->
-
-<section id="fanwall" class="fanwall">
-
-<h2 data-aos="fade-up">💛 Fan Wall</h2>
-
-<div class="fan-card" data-aos="zoom-in">
-
-<h3>"THALA FOR A REASON"</h3>
-
-<p>
-"The Greatest Captain. The Greatest Finisher.
-Forever in our Hearts."
-</p>
-
-<button id="likeBtn">
-❤️ Like
-</button>
-
-<p id="likeCount">0 Fans Liked</p>
-
-</div>
-
-</section>
-
 <!-- ================= CONTACT ================= -->
 
 <section id="contact" class="contact">
 
-<h2 data-aos="fade-up">Connect With Me</h2>
+<h2>Connect With Me</h2>
 
 <div class="social-links">
 
-<a href="https://www.instagram.com/jitenparmar_8/"
-target="_blank">
+<a href="https://www.instagram.com/jitenparmar_8" target="_blank">
 
 <i class="fab fa-instagram"></i>
 
@@ -473,8 +257,7 @@ Instagram
 
 </a>
 
-<a href="https://www.youtube.com/@cricshortindiateam-j1k"
-target="_blank">
+<a href="https://www.youtube.com/@cricshortindiateam-j1k" target="_blank">
 
 <i class="fab fa-youtube"></i>
 
@@ -482,8 +265,7 @@ YouTube
 
 </a>
 
-<a href="https://github.com/jitenrajput2009-bit"
-target="_blank">
+<a href="https://github.com/jitenrajput2009-bit" target="_blank">
 
 <i class="fab fa-github"></i>
 
@@ -495,31 +277,15 @@ GitHub
 
 </section>
 
-<!-- ================= MUSIC ================= -->
-
-<audio id="bgMusic" loop>
-
-<source src="assets/music/music.mp3" type="audio/mpeg">
-
-</audio>
-
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
 <h2>🏏 MS DHONI</h2>
 
-<p>
+<p>Made with ❤️ by Jiten Rajput</p>
 
-Made with ❤️ by Jiten Rajput
-
-</p>
-
-<p>
-
-© 2026 Ultimate Fan Website
-
-</p>
+<p>© 2026 Ultimate Dhoni Fan Website</p>
 
 </footer>
 
@@ -527,48 +293,14 @@ Made with ❤️ by Jiten Rajput
 
 <button id="topBtn">
 
-<i class="fa-solid fa-arrow-up"></i>
+<i class="fas fa-arrow-up"></i>
 
 </button>
 
-<!-- ================= LIGHTBOX ================= -->
-
-<div id="lightbox">
-
-<span id="closeLightbox">&times;</span>
-
-<img id="lightboxImg">
-
-</div>
-
-<!-- ================= SCRIPTS ================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-
-AOS.init({
-
-duration:1000,
-
-once:true
-
-});
-
-</script>
+<!-- ================= SCRIPT ================= -->
 
 <script src="script.js"></script>
 
 </body>
-<script src="script.js"></script>
+
 </html>
-
-<i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-<!--
