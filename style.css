@@ -326,3 +326,16 @@ font-size:30px;
 }
 
 }
+#musicBtn{
+position:fixed;
+left:20px;
+bottom:20px;
+padding:12px 20px;
+border:none;
+border-radius:30px;
+background:gold;
+color:black;
+font-weight:bold;
+cursor:pointer;
+z-index:9999;
+}
