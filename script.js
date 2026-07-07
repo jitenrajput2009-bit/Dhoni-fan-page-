@@ -1,63 +1,114 @@
-// =============================
-// MS DHONI ULTIMATE EDITION
-// SCRIPT PART 1
-// =============================
+/* =====================================
+   MS DHONI ULTIMATE WEBSITE V6
+   SCRIPT PART 1
+===================================== */
 
-// Loading Screen
+// ===== LOADER =====
 window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
 
-const loader=document.getElementById("loader");
+    setTimeout(() => {
+        loader.style.opacity = "0";
 
-setTimeout(()=>{
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 800);
 
-loader.style.opacity="0";
+    }, 1800);
+});
 
-setTimeout(()=>{
+// ===== AOS =====
+AOS.init({
+    duration: 1000,
+    once: true
+});
 
-loader.style.display="none";
+// ===== SWIPER =====
+const swiper = new Swiper(".mySwiper", {
 
-},800);
+    effect: "coverflow",
 
-},1200);
+    grabCursor: true,
+
+    centeredSlides: true,
+
+    loop: true,
+
+    slidesPerView: "auto",
+
+    coverflowEffect: {
+
+        rotate: 20,
+
+        stretch: 0,
+
+        depth: 220,
+
+        modifier: 1,
+
+        slideShadows: true,
+
+        scale: 0.9
+
+    },
+
+    autoplay: {
+
+        delay: 2500,
+
+        disableOnInteraction: false
+
+    },
+
+    pagination: {
+
+        el: ".swiper-pagination",
+
+        clickable: true
+
+    }
 
 });
 
-// Progress Bar
+// ===== GSAP HERO =====
 
-const progress=document.getElementById("progressBar");
-
-window.addEventListener("scroll",()=>{
-
-const scrollTop=document.documentElement.scrollTop;
-
-const scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
-const percent=(scrollTop/scrollHeight)*100;
-
-progress.style.width=percent+"%";
-
+gsap.from(".hero-img",{
+    y:-80,
+    opacity:0,
+    duration:1.3
 });
 
-// Dark Mode
-
-const themeBtn=document.getElementById("themeBtn");
-
-themeBtn.addEventListener("click",()=>{
-
-document.body.classList.toggle("light");
-
-themeBtn.innerHTML=document.body.classList.contains("light")
-?"☀️":"🌙";
-
+gsap.from(".hero h1",{
+    y:50,
+    opacity:0,
+    delay:.5,
+    duration:1
 });
 
-// Music
+gsap.from(".hero p",{
+    y:50,
+    opacity:0,
+    delay:.8,
+    duration:1
+});
+
+gsap.from(".btn,.btn2",{
+    scale:.6,
+    opacity:0,
+    delay:1.2,
+    duration:.8,
+    stagger:.2
+});
+
+// ===== MUSIC =====
 
 const music=document.getElementById("bgMusic");
 
 const musicBtn=document.getElementById("musicBtn");
 
-musicBtn.addEventListener("click",()=>{
+music.volume=.5;
+
+musicBtn.onclick=()=>{
 
 if(music.paused){
 
@@ -73,9 +124,25 @@ musicBtn.innerHTML="🎵";
 
 }
 
-});
+};
 
-// Counter Animation
+// ===== DARK MODE =====
+
+const themeBtn=document.getElementById("themeBtn");
+
+themeBtn.onclick=()=>{
+
+document.body.classList.toggle("light");
+
+themeBtn.innerHTML=
+
+document.body.classList.contains("light")
+
+?"☀️":"🌙";
+
+};
+
+// ===== COUNTERS =====
 
 function counter(id,target){
 
@@ -83,13 +150,13 @@ let value=0;
 
 const el=document.getElementById(id);
 
-if(!el) return;
+if(!el)return;
 
-const step=Math.max(1,Math.ceil(target/100));
+const speed=Math.ceil(target/100);
 
 const timer=setInterval(()=>{
 
-value+=step;
+value+=speed;
 
 if(value>=target){
 
@@ -113,290 +180,336 @@ counter("trophies",3);
 
 counter("ipl",5);
 
-// Typing Animation
+console.log("✅ Script Part 1 Loaded");/* =====================================
+   SCRIPT PART 2
+   Lightbox • Like • Scroll • Top Button
+===================================== */
 
-const typing=document.getElementById("typing");
+// ===== Progress Bar =====
 
-const text="THALA FOR A REASON 💛";
+const progressBar = document.getElementById("progressBar");
 
-let i=0;
+window.addEventListener("scroll", () => {
 
-typing.innerHTML="";
+    const winScroll =
+        document.documentElement.scrollTop;
 
-function type(){
+    const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
 
-if(i<text.length){
+    const scrolled = (winScroll / height) * 100;
 
-typing.innerHTML+=text.charAt(i);
-
-i++;
-
-setTimeout(type,120);
-
-}
-
-}
-
-type();
-
-console.log("🏏 Ultimate Edition Loaded");// =============================
-// SCRIPT PART 2
-// Gallery • Lightbox • Scroll
-// =============================
-
-// ===== Gallery Lightbox =====
-
-const galleryImages = document.querySelectorAll(".gallery-item img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-const closeLightbox = document.getElementById("closeLightbox");
-
-galleryImages.forEach((img)=>{
-
-img.addEventListener("click",()=>{
-
-lightbox.style.display="flex";
-
-lightboxImg.src=img.src;
-
-});
-
-});
-
-if(closeLightbox){
-
-closeLightbox.onclick=()=>{
-
-lightbox.style.display="none";
-
-};
-
-}
-
-if(lightbox){
-
-lightbox.onclick=(e)=>{
-
-if(e.target===lightbox){
-
-lightbox.style.display="none";
-
-}
-
-};
-
-}
-
-// ===== Auto Gallery Slider =====
-
-const gallery=document.querySelector(".gallery-grid");
-
-if(gallery){
-
-let direction=1;
-
-setInterval(()=>{
-
-gallery.scrollBy({
-
-left:300*direction,
-
-behavior:"smooth"
-
-});
-
-if(gallery.scrollLeft+gallery.clientWidth>=gallery.scrollWidth){
-
-direction=-1;
-
-}
-
-if(gallery.scrollLeft<=0){
-
-direction=1;
-
-}
-
-},3000);
-
-}
-
-// ===== Scroll Animation =====
-
-const sections=document.querySelectorAll("section");
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach((entry)=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
-
-}
-
-});
-
-},{
-threshold:0.15
-});
-
-sections.forEach((section)=>{
-
-section.style.opacity="0";
-
-section.style.transform="translateY(60px)";
-
-section.style.transition="all .8s ease";
-
-observer.observe(section);
+    progressBar.style.width = scrolled + "%";
 
 });
 
 // ===== Back To Top =====
 
-const topBtn=document.getElementById("topBtn");
+const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-if(window.scrollY>400){
+    if (window.scrollY > 400) {
 
-topBtn.style.display="block";
+        topBtn.style.display = "block";
 
-}else{
+    } else {
 
-topBtn.style.display="none";
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+topBtn.onclick = () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+};
+
+// ===== Gallery Lightbox =====
+
+const images = document.querySelectorAll(".swiper-slide img");
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImg = document.getElementById("lightboxImg");
+
+const closeBtn = document.getElementById("closeLightbox");
+
+images.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        lightbox.style.display = "flex";
+
+        lightboxImg.src = img.src;
+
+    });
+
+});
+
+closeBtn.onclick = () => {
+
+    lightbox.style.display = "none";
+
+};
+
+lightbox.onclick = (e) => {
+
+    if (e.target === lightbox) {
+
+        lightbox.style.display = "none";
+
+    }
+
+};
+
+// ===== Like Button =====
+
+let likes = Number(localStorage.getItem("dhoniLikes")) || 0;
+
+const likeBtn = document.getElementById("likeBtn");
+
+const likeCount = document.getElementById("likeCount");
+
+likeCount.innerHTML = "❤️ " + likes + " Likes";
+
+likeBtn.onclick = () => {
+
+    likes++;
+
+    localStorage.setItem("dhoniLikes", likes);
+
+    likeCount.innerHTML = "❤️ " + likes + " Likes";
+
+    gsap.fromTo(
+
+        "#likeBtn",
+
+        { scale: 1 },
+
+        {
+
+            scale: 1.2,
+
+            duration: 0.2,
+
+            yoyo: true,
+
+            repeat: 1
+
+        }
+
+    );
+
+};
+
+// ===== Scroll Reveal =====
+
+gsap.utils.toArray("section").forEach(section => {
+
+    gsap.from(section, {
+
+        scrollTrigger: section,
+
+        y: 80,
+
+        opacity: 0,
+
+        duration: 1
+
+    });
+
+});
+
+// ===== Hero Image Effect =====
+
+const hero = document.querySelector(".hero-img");
+
+hero.addEventListener("mousemove", () => {
+
+    hero.style.transform =
+
+        "scale(1.08) rotate(3deg)";
+
+});
+
+hero.addEventListener("mouseleave", () => {
+
+    hero.style.transform = "";
+
+});
+
+console.log("✅ Script Part 2 Loaded");/* =====================================
+   SCRIPT PART 3
+   Premium Effects & Final Features
+===================================== */
+
+// Register GSAP plugin
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
+
+// ===== Floating Gold Particles =====
+
+const particles = document.getElementById("particles");
+
+if (particles) {
+
+    for (let i = 0; i < 80; i++) {
+
+        const p = document.createElement("span");
+
+        p.className = "particle";
+
+        p.style.left = Math.random() * 100 + "%";
+        p.style.top = Math.random() * 100 + "%";
+
+        p.style.animationDuration =
+            (5 + Math.random() * 8) + "s";
+
+        p.style.animationDelay =
+            (Math.random() * 5) + "s";
+
+        particles.appendChild(p);
+
+    }
 
 }
 
-});
+// ===== Mouse Glow =====
 
-topBtn.addEventListener("click",()=>{
+const glow = document.createElement("div");
 
-window.scrollTo({
+glow.id = "cursorGlow";
 
-top:0,
+document.body.appendChild(glow);
 
-behavior:"smooth"
+document.addEventListener("mousemove", (e) => {
 
-});
-
-});
-
-// ===== Hero Image Hover Effect =====
-
-const hero=document.querySelector(".hero-img");
-
-if(hero){
-
-hero.addEventListener("mousemove",()=>{
-
-hero.style.transform="scale(1.08) rotate(3deg)";
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
 
 });
 
-hero.addEventListener("mouseleave",()=>{
+// ===== Keyboard Shortcuts =====
 
-hero.style.transform="scale(1) rotate(0deg)";
+document.addEventListener("keydown", (e) => {
 
-});
+    // M = Music
+    if (e.key.toLowerCase() === "m") {
 
-}
+        musicBtn.click();
 
-// ===== Double Click Like =====
+    }
 
-galleryImages.forEach((img)=>{
+    // T = Top
+    if (e.key.toLowerCase() === "t") {
 
-img.addEventListener("dblclick",()=>{
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
-img.style.boxShadow="0 0 40px red";
-
-setTimeout(()=>{
-
-img.style.boxShadow="0 0 30px gold";
-
-},800);
-
-});
+    }
 
 });
 
-console.log("🔥 Script Part 2 Loaded");// =======================================
-// SCRIPT PART 3 - Ultimate Effects
-// =======================================
+// ===== Hero Tilt =====
 
-// ===== Welcome Message =====
-setTimeout(() => {
-    console.log("🏏 Welcome to MS Dhoni Ultimate Fan Page");
-}, 1000);
-
-// ===== Hero Easter Egg =====
-let tapCount = 0;
 const heroImg = document.querySelector(".hero-img");
 
 if (heroImg) {
-    heroImg.addEventListener("click", () => {
-        tapCount++;
 
-        if (tapCount === 5) {
-            alert("🏏 THALA FOR A REASON 💛");
-            document.body.style.boxShadow = "inset 0 0 120px gold";
+    heroImg.addEventListener("mousemove", (e) => {
 
-            setTimeout(() => {
-                document.body.style.boxShadow = "none";
-            }, 2000);
+        const x =
+            (e.offsetX / heroImg.offsetWidth - 0.5) * 15;
 
-            tapCount = 0;
-        }
+        const y =
+            (e.offsetY / heroImg.offsetHeight - 0.5) * -15;
+
+        heroImg.style.transform =
+            `rotateX(${y}deg) rotateY(${x}deg) scale(1.05)`;
+
     });
-}
 
-// ===== Floating Golden Particles =====
+    heroImg.addEventListener("mouseleave", () => {
 
-for (let i = 0; i < 25; i++) {
+        heroImg.style.transform = "";
 
-    const particle = document.createElement("div");
-
-    particle.className = "particle";
-
-    particle.style.left = Math.random() * 100 + "%";
-
-    particle.style.animationDuration =
-        (4 + Math.random() * 5) + "s";
-
-    particle.style.animationDelay =
-        Math.random() * 5 + "s";
-
-    document.body.appendChild(particle);
+    });
 
 }
 
-// ===== Random Dhoni Quotes =====
+// ===== Random Quotes =====
 
 const quotes = [
 
+"THALA FOR A REASON 💛",
+
+"Captain Cool 👑",
+
 "Process is more important than results.",
 
-"Enjoy the game and chase your dreams.",
+"Never Give Up.",
 
-"You don't play for revenge.",
-
-"Self-belief makes champions.",
-
-"Stay calm under pressure."
+"Finish Like Dhoni."
 
 ];
 
-const quoteHeading = document.querySelector(".quote h2");
+const title = document.getElementById("typing");
 
-if (quoteHeading) {
+if (title) {
 
     let q = 0;
 
     setInterval(() => {
 
-        q++;
+        q = (q + 1) % quotes.length;
 
-        if (
+        title.textContent = quotes[q];
+
+    }, 4000);
+
+}
+
+// ===== Welcome Effect =====
+
+setTimeout(() => {
+
+    console.log("🏏 Welcome to Ultimate Dhoni Website");
+
+}, 1500);
+
+// ===== Easter Egg =====
+
+let clicks = 0;
+
+if (heroImg) {
+
+    heroImg.addEventListener("click", () => {
+
+        clicks++;
+
+        if (clicks === 7) {
+
+            alert("💛 THALA FOR A REASON 🏆");
+
+            clicks = 0;
+
+        }
+
+    });
+
+}
+
+console.log("🔥 Ultimate Website Loaded Successfully");
