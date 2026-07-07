@@ -904,7 +904,50 @@ from{
 opacity:0;
 transform:translateY(40px);
 }
+/* Cursor Glow */
 
+#cursorGlow{
+position:fixed;
+width:180px;
+height:180px;
+background:radial-gradient(circle,
+rgba(255,215,0,.35),
+transparent 70%);
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:9999;
+filter:blur(18px);
+}
+
+/* Better Particle */
+
+.particle{
+position:absolute;
+width:6px;
+height:6px;
+background:gold;
+border-radius:50%;
+animation:floatParticle linear infinite;
+opacity:.8;
+}
+
+@keyframes floatParticle{
+
+0%{
+transform:translateY(40px);
+opacity:0;
+}
+
+30%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
 to{
 opacity:1;
 transform:translateY(0);
