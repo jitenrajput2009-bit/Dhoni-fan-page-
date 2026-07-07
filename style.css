@@ -289,25 +289,22 @@ object-fit:cover;
 
 }
 
-.overlay{
-
+..overlay{
 position:absolute;
-
+top:0;
+left:0;
 width:100%;
-
 height:100%;
-
-background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.8));
+background:rgba(0,0,0,0.35);
+z-index:1;
+}
 
 }
 
-.hero-content{
-
+..hero-content{
 position:relative;
-
-z-index:10;
-
-text-align:center;
+z-index:2;
+}
 
 }
 
