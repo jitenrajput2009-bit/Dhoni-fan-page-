@@ -403,3 +403,13 @@ padding:70px 20px;
 }
 
 }
+.zoom{
+transform:scale(1.15);
+transition:.4s;
+box-shadow:0 0 30px gold;
+}
+
+.card h3{
+transform:translateY(30px);
+transition:.6s;
+}
