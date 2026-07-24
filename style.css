@@ -685,3 +685,19 @@ font-size:1.8rem;
 }
 
 }
+.social-links a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    margin:18px 0;
+}
+
+.social-links a i{
+    font-size:30px;
+}
+
+.insta{color:#E1306C;}
+.youtube{color:#FF0000;}
