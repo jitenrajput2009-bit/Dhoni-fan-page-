@@ -2,405 +2,143 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Dhoni | Ultimate Fan Page V5</title>
 
-<title>MS Dhoni | Ultimate Fan Website</title>
+    <meta name="description"
+        content="Ultimate MS Dhoni Fan Page created by Jiten Rajput">
 
-<meta name="description" content="Ultimate MS Dhoni Fan Website">
+    <meta name="theme-color" content="#f7c600">
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- Loader -->
+    <!-- ========================= -->
+    <!-- Loading Screen -->
+    <!-- ========================= -->
 
-<div id="loader">
+    <div id="loader">
 
-<h1>🏏 THALA</h1>
+        <div class="loader-logo">
+            <h1>MS DHONI</h1>
+            <span>THALA FOREVER</span>
+        </div>
 
-<div class="loader-bar">
+        <div class="loading-bar">
+            <div class="loading-fill"></div>
+        </div>
 
-<div class="loader-fill"></div>
+    </div>
 
-</div>
+    <!-- ========================= -->
+    <!-- Background Music -->
+    <!-- ========================= -->
 
-</div>
+    <audio id="bgMusic" loop>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- Header -->
+    <!-- ========================= -->
+    <!-- Hero Video -->
+    <!-- ========================= -->
 
-<header>
+    <video autoplay muted loop playsinline id="heroVideo">
 
-<div class="logo">
+        <source src="assets/videos/hero.mp4" type="video/mp4">
 
-🏏 MS DHONI
+    </video>
 
-</div>
+    <div class="video-overlay"></div>
 
-<nav>
+    <!-- ========================= -->
+    <!-- Navigation -->
+    <!-- ========================= -->
 
-<a href="#home">Home</a>
+    <header>
 
-<a href="#about">About</a>
+        <nav class="navbar">
 
-<a href="#gallery">Gallery</a>
+            <div class="logo">
 
-<a href="#stats">Stats</a>
+                <h2>MS DHONI</h2>
 
-<a href="#contact">Contact</a>
+            </div>
 
-</nav>
+            <ul class="nav-links">
 
-<div class="header-btns">
+                <li><a href="#home">Home</a></li>
 
-<button id="themeBtn">
+                <li><a href="#about">About</a></li>
 
-🌙
+                <li><a href="#career">Career</a></li>
 
-</button>
+                <li><a href="#gallery">Gallery</a></li>
 
-<button id="musicBtn">
+                <li><a href="#records">Records</a></li>
 
-🎵
+                <li><a href="#videos">Videos</a></li>
 
-</button>
+                <li><a href="#poll">Poll</a></li>
 
-</div>
+                <li><a href="#contact">Contact</a></li>
 
-</header>
+            </ul>
 
-<!-- Hero -->
+            <div class="menu-btn">
 
-<section id="home" class="hero">
+                ☰
 
-<video autoplay muted loop playsinline>
+            </div>
 
-<source src="assets/video/hero.mp4" type="video/mp4">
+        </nav>
 
-</video>
+    </header>
 
-<div class="overlay"></div>
+    <!-- ========================= -->
+    <!-- Hero Section -->
+    <!-- ========================= -->
 
-<div class="hero-content">
+    <section id="home" class="hero">
 
-<img src="assets/images/dhoni1.jpg" alt="MS Dhoni" class="hero-img">
+        <div class="hero-content">
 
-<h1>THALA FOR A REASON</h1>
+            <h3>WELCOME TO</h3>
 
-<p>
+            <h1>THE ULTIMATE</h1>
 
-Captain Cool • World Champion • CSK Legend
+            <h1 class="yellow">MS DHONI</h1>
 
-</p>
+            <h2>FAN PAGE</h2>
 
-<div class="hero-buttons">
+            <p>
 
-<a href="#gallery" class="btn">
+                Captain Cool • Finisher • Legend • Thala Forever
 
-Explore Gallery
+            </p>
 
-</a>
+            <div class="hero-buttons">
 
-<a href="#stats" class="btn2">
+                <a href="#about" class="btn1">
 
-Career Stats
+                    Explore
 
-</a>
+                </a>
 
-</div>
+                <a href="#gallery" class="btn2">
 
-</div>
+                    Gallery
 
-</section>
+                </a>
 
-<!-- Hero Stats -->
+            </div>
 
-<section class="hero-stats">
+        </div>
 
-<div class="stat">
+    </section>
 
-<h2 id="matches">538</h2>
-
-<p>International Matches</p>
-
-</div>
-
-<div class="stat">
-
-<h2 id="runs">17092+</h2>
-
-<p>International Runs</p>
-
-</div>
-
-<div class="stat">
-
-<h2>3</h2>
-
-<p>ICC Trophies</p>
-
-</div>
-
-<div class="stat">
-
-<h2>5</h2>
-
-<p>IPL Titles</p>
-
-</div>
-
-</section>
-
-<!-- About section starts in Part 2 --><!-- ================= ABOUT ================= -->
-
-<section id="about" class="about">
-
-<div class="container">
-
-<h2>About MS Dhoni</h2>
-
-<p>
-
-Mahendra Singh Dhoni is one of the greatest captains in cricket history.
-Known as "Captain Cool", he led India to victory in the 2007 ICC T20 World Cup,
-2011 ICC Cricket World Cup and 2013 ICC Champions Trophy.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ================= GALLERY ================= -->
-
-<section id="gallery" class="gallery">
-
-<h2>Gallery</h2>
-
-<div class="gallery-grid">
-
-<img src="assets/images/dhoni1.jpg" alt="Dhoni 1">
-
-<img src="assets/images/dhoni2.jpg" alt="Dhoni 2">
-
-<img src="assets/images/dhoni3.jpg" alt="Dhoni 3">
-
-<img src="assets/images/dhoni4.jpg" alt="Dhoni 4">
-
-</div>
-
-</section>
-
-<!-- ================= CAREER STATS ================= -->
-
-<section id="stats" class="stats">
-
-<h2>Career Stats</h2>
-
-<div class="stats-grid">
-
-<div class="card">
-
-<h3>538</h3>
-
-<p>International Matches</p>
-
-</div>
-
-<div class="card">
-
-<h3>17092+</h3>
-
-<p>International Runs</p>
-
-</div>
-
-<div class="card">
-
-<h3>829</h3>
-
-<p>International Dismissals</p>
-
-</div>
-
-<div class="card">
-
-<h3>200+</h3>
-
-<p>Stumpings</p>
-
-</div>
-
-<div class="card">
-
-<h3>3</h3>
-
-<p>ICC Trophies</p>
-
-</div>
-
-<div class="card">
-
-<h3>5</h3>
-
-<p>IPL Titles</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= TROPHIES ================= -->
-
-<section class="trophies">
-
-<h2>Major Achievements</h2>
-
-<div class="trophy-grid">
-
-<div class="trophy">
-
-🏆
-
-<h3>T20 World Cup</h3>
-
-<p>2007 Champion</p>
-
-</div>
-
-<div class="trophy">
-
-🏆
-
-<h3>World Cup</h3>
-
-<p>2011 Champion</p>
-
-</div>
-
-<div class="trophy">
-
-🏆
-
-<h3>Champions Trophy</h3>
-
-<p>2013 Champion</p>
-
-</div>
-
-<div class="trophy">
-
-💛
-
-<h3>IPL Champion</h3>
-
-<p>5 Times Winner</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Contact section starts in Part 3 --><!-- ================= FAN ZONE ================= -->
-
-<section id="fans" class="fans">
-
-<h2>Fan Zone ❤️</h2>
-
-<div class="fan-box">
-
-<h3>Do You Like This Website?</h3>
-
-<button id="likeBtn">❤️ Like</button>
-
-<p id="likeCount">0 Likes</p>
-
-</div>
-
-</section>
-
-<!-- ================= MUSIC ================= -->
-
-<audio id="bgMusic" loop>
-
-<source src="assets/music/music.mp3" type="audio/mpeg">
-
-</audio>
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-<h2>Connect With Me</h2>
-
-<div class="social-links">
-
-<a href="https://www.instagram.com/jitenparmar_8" target="_blank">
-
-<i class="fab fa-instagram"></i>
-
-Instagram
-
-</a>
-
-<a href="https://www.youtube.com/@cricshortindiateam-j1k" target="_blank">
-
-<i class="fab fa-youtube"></i>
-
-YouTube
-
-</a>
-
-<a href="https://github.com/jitenrajput2009-bit" target="_blank">
-
-<i class="fab fa-github"></i>
-
-GitHub
-
-</a>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<h2>🏏 MS DHONI</h2>
-
-<p>Made with ❤️ by Jiten Rajput</p>
-
-<p>© 2026 Ultimate Dhoni Fan Website</p>
-
-</footer>
-
-<!-- ================= TOP BUTTON ================= -->
-
-<button id="topBtn">
-
-<i class="fas fa-arrow-up"></i>
-
-</button>
-
-<!-- ================= SCRIPT ================= -->
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+    <!-- About section starts in Part 1B -->
