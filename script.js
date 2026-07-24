@@ -1,142 +1,113 @@
-/* ===========================
-   MS DHONI WEBSITE
-   SCRIPT PART 1
-=========================== */
+/*======================================
+MS DHONI FAN PAGE V5
+Made By Jiten Rajput
+======================================*/
 
+// ==============================
 // Loader
+// ==============================
+
 window.addEventListener("load", () => {
+
     setTimeout(() => {
-        const loader = document.getElementById("loader");
-        if (loader) {
-            loader.style.display = "none";
-        }
-    }, 1800);
+
+        document.getElementById("loader").style.display = "none";
+
+    }, 3000);
+
 });
 
-// Dark Mode
-const themeBtn = document.getElementById("themeBtn");
+// ==============================
+// Animated Counter
+// ==============================
 
-if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-        document.body.classList.toggle("light-mode");
+const counters = document.querySelectorAll(".counter");
 
-        if (document.body.classList.contains("light-mode")) {
-            themeBtn.textContent = "☀️";
+counters.forEach(counter => {
+
+    const updateCounter = () => {
+
+        const target = +counter.getAttribute("data-target");
+
+        const count = +counter.innerText;
+
+        const speed = target / 150;
+
+        if (count < target) {
+
+            counter.innerText = Math.ceil(count + speed);
+
+            setTimeout(updateCounter, 20);
+
         } else {
-            themeBtn.textContent = "🌙";
-        }
-    });
-}
 
-// Music
+            counter.innerText = target.toLocaleString();
+
+        }
+
+    };
+
+    updateCounter();
+
+});
+
+// ==============================
+// Background Music
+// ==============================
+
 const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
 
-if (musicBtn && music) {
+document.body.addEventListener("click", () => {
 
-    music.volume = 0.5;
+    music.play().catch(() => {});
 
-    musicBtn.addEventListener("click", () => {
+}, { once: true });
 
-        if (music.paused) {
-
-            music.play();
-            musicBtn.textContent = "⏸️";
-
-        } else {
-
-            music.pause();
-            musicBtn.textContent = "🎵";
-
-        }
-
-    });
-
-}
-
-// Smooth Scroll
-document.querySelectorAll("nav a").forEach(link => {
-
-    link.addEventListener("click", function(e) {
-
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if(target){
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
-
-    });
-
-});
-
-// Hero Animation
-const heroImg = document.querySelector(".hero-img");
-
-if(heroImg){
-
-setInterval(()=>{
-
-heroImg.style.transform="scale(1.05)";
-
-setTimeout(()=>{
-
-heroImg.style.transform="scale(1)";
-
-},700);
-
-},2500);
-
-}/* ===========================
-   SCRIPT PART 2
-   Like • Top Button • Gallery
-=========================== */
-
-// ❤️ Like Counter (Local)
-
-let likes = localStorage.getItem("dhoniLikes") || 0;
+// ==============================
+// Like Counter
+// ==============================
 
 const likeBtn = document.getElementById("likeBtn");
+
 const likeCount = document.getElementById("likeCount");
 
-if (likeCount) {
-    likeCount.textContent = likes + " Likes";
-}
+let likes = localStorage.getItem("dhoniLikes");
 
-if (likeBtn) {
+if (!likes) {
 
-    likeBtn.addEventListener("click", () => {
-
-        likes++;
-
-        localStorage.setItem("dhoniLikes", likes);
-
-        likeCount.textContent = likes + " Likes";
-
-        likeBtn.style.transform = "scale(1.15)";
-
-        setTimeout(() => {
-            likeBtn.style.transform = "scale(1)";
-        }, 200);
-
-    });
+    likes = 0;
 
 }
 
-// ⬆️ Back To Top
+likeCount.innerText = likes;
+
+likeBtn.addEventListener("click", () => {
+
+    likes++;
+
+    localStorage.setItem("dhoniLikes", likes);
+
+    likeCount.innerText = likes;
+
+    likeBtn.innerHTML = "💛 Thank You Thala Fan";
+
+    setTimeout(() => {
+
+        likeBtn.innerHTML = "❤️ Like Thala";
+
+    }, 1500);
+
+});
+
+// ==============================
+// Scroll To Top Button
+// ==============================
 
 const topBtn = document.getElementById("topBtn");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 300) {
+    if (window.scrollY > 400) {
 
         topBtn.style.display = "block";
 
@@ -158,156 +129,252 @@ topBtn.addEventListener("click", () => {
 
     });
 
+});// ==============================
+// Mobile Navigation
+// ==============================
+
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click", () => {
+
+    if (navLinks.style.display === "flex") {
+
+        navLinks.style.display = "none";
+
+    } else {
+
+        navLinks.style.display = "flex";
+        navLinks.style.flexDirection = "column";
+        navLinks.style.position = "absolute";
+        navLinks.style.top = "80px";
+        navLinks.style.right = "20px";
+        navLinks.style.background = "#111";
+        navLinks.style.padding = "20px";
+        navLinks.style.borderRadius = "15px";
+        navLinks.style.gap = "20px";
+
+    }
+
 });
 
-// 🖼️ Gallery Zoom
+// ==============================
+// Fan Poll
+// ==============================
 
-const images = document.querySelectorAll(".gallery-grid img");
+const voteButtons = document.querySelectorAll(".vote");
+const voteMessage = document.getElementById("voteMessage");
 
-images.forEach(img => {
+voteButtons.forEach(button => {
 
-    img.addEventListener("click", () => {
+    button.addEventListener("click", () => {
 
-        img.classList.toggle("zoom");
+        localStorage.setItem("dhoniVote", "YES");
+
+        voteMessage.innerHTML =
+            "💛 Thank you for voting! THALA Forever.";
 
     });
 
 });
 
-// 📊 Stats Animation
+// ==============================
+// Fan Comments
+// ==============================
 
-const stats = document.querySelectorAll(".card h3");
+const commentBtn = document.getElementById("commentBtn");
+const commentList = document.getElementById("commentList");
 
-stats.forEach(stat => {
+function loadComments() {
 
-    stat.style.opacity = "0";
+    const comments =
+        JSON.parse(localStorage.getItem("dhoniComments")) || [];
+
+    commentList.innerHTML = "";
+
+    comments.forEach(item => {
+
+        commentList.innerHTML += `
+        <div class="comment-card">
+            <h4>${item.name}</h4>
+            <p>${item.comment}</p>
+        </div>
+        `;
+
+    });
+
+}
+
+loadComments();
+
+commentBtn.addEventListener("click", () => {
+
+    const name = document.getElementById("name").value.trim();
+    const comment = document.getElementById("comment").value.trim();
+
+    if (name === "" || comment === "") {
+
+        alert("Please fill all fields.");
+
+        return;
+
+    }
+
+    const comments =
+        JSON.parse(localStorage.getItem("dhoniComments")) || [];
+
+    comments.push({
+
+        name: name,
+
+        comment: comment
+
+    });
+
+    localStorage.setItem(
+
+        "dhoniComments",
+
+        JSON.stringify(comments)
+
+    );
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+
+    loadComments();
 
 });
 
-window.addEventListener("scroll", () => {
+// ==============================
+// Smooth Navigation
+// ==============================
 
-    stats.forEach(stat => {
+document.querySelectorAll("a[href^='#']").forEach(link => {
 
-        const pos = stat.getBoundingClientRect().top;
+    link.addEventListener("click", function(e) {
 
-        if (pos < window.innerHeight - 100) {
+        e.preventDefault();
 
-            stat.style.opacity = "1";
+        const target = document.querySelector(this.getAttribute("href"));
 
-            stat.style.transform = "translateY(0)";
+        if (target) {
+
+            target.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
 
         }
 
     });
 
+});// ==============================
+// Scroll Reveal Animation
+// ==============================
+
+const revealElements = document.querySelectorAll(
+".about,.stats,.career,.gallery,.records,.videos,.fan-love,.poll,.comments,.contact"
+);
+
+function revealOnScroll(){
+
+    revealElements.forEach(element=>{
+
+        const top = element.getBoundingClientRect().top;
+        const visible = window.innerHeight - 120;
+
+        if(top < visible){
+
+            element.classList.add("show");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
+
+// ==============================
+// Gallery Click Effect
+// ==============================
+
+const galleryImages =
+document.querySelectorAll(".gallery-card img");
+
+galleryImages.forEach(image=>{
+
+    image.addEventListener("click",()=>{
+
+        image.style.transform="scale(1.15)";
+
+        setTimeout(()=>{
+
+            image.style.transform="scale(1)";
+
+        },300);
+
+    });
+
 });
 
-console.log("✅ Script Part 2 Loaded");
-/* ===========================
-   SCRIPT PART 3
-   Final Effects
-=========================== */
-
+// ==============================
 // Welcome Message
-window.setTimeout(() => {
-    console.log("🏏 Welcome to the Ultimate MS Dhoni Fan Website!");
-}, 1000);
+// ==============================
 
-// Random Quote
-const quotes = [
-    "THALA FOR A REASON 💛",
-    "Captain Cool 👑",
-    "Never Give Up.",
-    "Process is More Important Than Result.",
-    "One Team. One Dream."
-];
+setTimeout(()=>{
 
-const heroTitle = document.querySelector(".hero h1");
+console.log("Welcome To Ultimate MS Dhoni Fan Page V5");
 
-if (heroTitle) {
+},1000);
 
-    let i = 0;
+// ==============================
+// Keyboard Shortcut
+// Press D for Top
+// ==============================
 
-    setInterval(() => {
+document.addEventListener("keydown",(e)=>{
 
-        heroTitle.style.opacity = "0";
+if(e.key==="d" || e.key==="D"){
 
-        setTimeout(() => {
+window.scrollTo({
 
-            heroTitle.innerText = quotes[i];
+top:0,
 
-            heroTitle.style.opacity = "1";
-
-            i++;
-
-            if (i >= quotes.length) i = 0;
-
-        }, 300);
-
-    }, 4000);
-
-}
-
-// Keyboard Shortcuts
-document.addEventListener("keydown", (e) => {
-
-    // M = Music
-    if (e.key.toLowerCase() === "m") {
-
-        if (musicBtn) musicBtn.click();
-
-    }
-
-    // T = Top
-    if (e.key.toLowerCase() === "t") {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
+behavior:"smooth"
 
 });
 
-// Floating Hero Animation
-const hero = document.querySelector(".hero-img");
-
-if (hero) {
-
-    let up = true;
-
-    setInterval(() => {
-
-        hero.style.transform =
-            up ? "translateY(-10px)" : "translateY(0px)";
-
-        up = !up;
-
-    }, 1500);
-
 }
 
-// Easter Egg
-let clickCount = 0;
+});
 
-if (hero) {
+// ==============================
+// Disable Right Click
+// ==============================
 
-    hero.addEventListener("click", () => {
+document.addEventListener("contextmenu",(e)=>{
 
-        clickCount++;
+e.preventDefault();
 
-        if (clickCount === 7) {
+});
 
-            alert("🏆 THALA FOR A REASON 💛");
+// ==============================
+// Page Loaded
+// ==============================
 
-            clickCount = 0;
+window.addEventListener("load",()=>{
 
-        }
+console.log("Website Loaded Successfully");
 
-    });
+});
 
-}
+// ==============================
+// Finished
+// ==============================
 
-console.log("✅ Script Part 3 Loaded Successfully");
-console.log("✅ Script Part 1 Loaded");
+console.log("MS DHONI FAN PAGE V5");
+console.log("Made By Jiten Rajput");
